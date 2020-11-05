@@ -69,7 +69,7 @@ exports.userLogin= function(req, res){
            {
                       let  email=req.body.email;
                       let mdpassword=md5(req.body.password);
-                    let query='SELECT name, email, role FROM user where email="'+email+ '" and password="'+mdpassword+'"';
+                    let query='SELECT id, name, email, role FROM user where email="'+email+ '" and password="'+mdpassword+'"';
                     connection.query(query, function (err, result, fields) {
                         if (err) {
                             res.send({status:"fail", message:"Something went wrong try again..!"});
